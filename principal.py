@@ -4,7 +4,7 @@ import random
 import time
 from pygame.locals impor
 
-limitrophes = {
+limitrophe = {
   'thukten':{lildeilon,inno-6,aorizia},
   'lildeilon':{thukten,inno-6,ordogas,amlivor},
   'inno-6':{thukten,lildeilon,aorizia,amlivor,azaire},
@@ -21,9 +21,21 @@ limitrophes = {
   'mentu-hotep':{eichornia,ryutada,kuargen,gargle,zhoshusat}
   'eichornia':{mentu-hotep,ryutada,loukinir,zhoshusat,alaneo}
   'ryutada':{mentu-hotep,eichornia,loukinir,kuargen}
-  'kuargen':{}
-  '':{}
-  '':{}
+  'kuargen':{mentu-hotep,ryutada,gargle,thunodel}
+  'gargle':{mentu-hotep,kuargen,thunodel,zhoshusat,alaneo}
+  'alaneo':{eichornia,loukinir,thunodel,gargle,zhoshusat}
+  'zhoshusat':{mentu-hotep,eichornia,alaneo,gargle}
+  'loukinir':{eichornia,ryutada,alaneo,thunodel,doldrec}
+  'thunodel':{kuargen,gargle,alaneo,loukinir,doldrec}
+  'doldrec':{loukinir,thunodel}
+  'phosthonia':{vaedrann,kharrak,vyndono}
+  'kharrak':{phosthonia,vyndono,lycurgus}
+  'vyndono':{phosthonia,kharrak}
+  'lycurgus':{kharrak,bamzar,jaldumka}
+  'jaldumka':{lycurgus,bamzar}
+  'bamzar':{lycurgus,jaldumka,diable}
+  'diable':{bamzar,kayal,nordland}
+  'kayal':{diable,raseldor,tchorroppoi,qeralukia,vaelinore}
   '':{}
   '':{}
   '':{}
@@ -36,16 +48,3 @@ limitrophes = {
   
 }
 
-#la région=toute les régions limitrophes
-pygame.init()
-# ----------------- ecran -------------
-# definition de la taille de l'écran
-largeur_fenetre = 1366
-hauteur_fenetre = 768
-#definition des fonts de l'écran
-font_style = pygame.font.SysFont("Garamond", 25)
-# creation de l'ecran
-fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
-pygame.display.set_caption('Foreign Wars')
-# démarage du timer
-clock = pygame.time.Clock()
