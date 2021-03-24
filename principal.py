@@ -15,9 +15,9 @@ limitrove = {
   'baerdan':{ordogas,amlivor,krar-zimak,frodrine}
   'krar-zimak':{ordogas,baerdan,frodrine,vaedran,andrinos}
   'frodrine':{amlivor,azaire,baerdan,krar-zimak,vaedran}
-  '':{}
-  '':{}
-  '':{}
+  'vaedran':{krar-zimak,frodrine,andrinos,phosthonia}
+  'andrinos':{krar-zimak,vaedran,szet-as}
+  'szet-as':{andrinos,mentu-hotep}
   '':{}
   '':{}
   '':{}
