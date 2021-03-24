@@ -4,6 +4,7 @@ import random
 import time
 from pygame.locals impor
 pygame.init()
+
 #---------ecran---------
 #definition de la taille de l'écran
 largeur_fenetre=1366
