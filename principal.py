@@ -3,6 +3,19 @@ import os
 import random
 import time
 from pygame.locals impor
+pygame.init()
+#---------ecran---------
+#definition de la taille de l'écran
+largeur_fenetre=1366
+hauteur_fenetre=768
+#définition des polices affichées à l'écran
+font_style=pygame.font.SysFont("Garamond",25)
+#creation de l'écran
+fenetre= pygame.display.set_mode((largeur_fenetre,hauteur_fenetre))
+pygame.display.set_caption('Foreign Wars')
+#démarrage du timer
+clock=pygame.time.Clock()
+
 
 limitrophe = {
   'thukten':{lildeilon,inno-6,aorizia},
