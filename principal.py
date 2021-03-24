@@ -6,7 +6,7 @@ from pygame.locals impor
 pygame.init()
 
 #---------ecran---------
-#definition de la taille de l'écran
+#*inition de la taille de l'écran
 largeur_fenetre=1366
 hauteur_fenetre=768
 #définition des polices affichées à l'écran
@@ -59,14 +59,20 @@ limitrophe = {
   'nordland':{'diable','finnär','vestgeir','dawi'},
   'dawi':{'nordland','scalare','helek'},
   'scalare':{'dawi','helek','al-rion','sslitherin'},
-  '':{}
-  '':{}
-  '':{}
-  '':{}
-  '':{}
-  '':{}
-  '':{}
-  '':{}
-  '':{}  
+  'helek':{'dawi','scalare','al-rion','hua'},
+  'al-rion':{'scalare','helek','sslitherin'},
+  'sslitherin':{'scalare','al-rion','shyzzia'},
+  'shyzzia':{'sslitherin','murem'},
+  'finnär':{'nordland','vestgeir','defnar'},
+  'vestgeir':{'nordland','finnär','defnar','hol-drer'},
+  'defnar':{'finnär','vestgeir','hol-drer','ergli','dhondru'},
+  'hol-drer':{'vestgeir','defnar','dhondru'},
+  'ergli':{'defnar','dhondru'},
+  'dhondru':{'defnar','hol-drer','ergli','rimmassee'},
+  'rimmassee':{'dhondru','hua'},
+  'hua':{'helek','rimmassee','idenia'},
+  'idenia':{'hua','baganda','brillup'},
+  'baganda':{'idenia','brillup'},
+  'brillup':{'idenia','baganda','murem'},
+  'murem':{'shyzzia','brillup'},
 }
-
