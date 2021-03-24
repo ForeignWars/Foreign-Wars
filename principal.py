@@ -19,10 +19,10 @@ clock=pygame.time.Clock()
 
 
 limitrophe = {
-  'thukten':{'lildeilon","inno-6","aorizia"},
-  'lildeilon':{'thukten","inno-6","ordogas","amlivor"},
-  'inno-6':{'thukten","lildeilon","aorizia","amlivor","azaire"},
-  'aorizia':{thukten,inno-6,azaire,}
+  'thukten':{'lildeilon','inno-6','aorizia'},
+  'lildeilon':{'thukten','inno-6','ordogas','amlivor'},
+  'inno-6':{'thukten','lildeilon','aorizia','amlivor','azaire'},
+  'aorizia':{'thukten','inno-6','azaire'}
   'ordogas':{lildeilon,amlivor,baerdan,krar-zimak,}
   'amlivor':{lildeilon,inno-6,ordogas,azaire,baerdan,frodrine}
   'azaire':{inno-6,aorizia,amlivor,frodrine}
