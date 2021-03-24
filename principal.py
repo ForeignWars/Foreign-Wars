@@ -37,6 +37,7 @@ limitrophes = {
 }
 
 #la région=toute les régions limitrophes
+pygame.init()
 # ----------------- ecran -------------
 # definition de la taille de l'écran
 largeur_fenetre = 1366
@@ -45,6 +46,6 @@ hauteur_fenetre = 768
 font_style = pygame.font.SysFont("Garamond", 25)
 # creation de l'ecran
 fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
-pygame.display.set_caption('Snake Python')
+pygame.display.set_caption('Foreign Wars')
 # démarage du timer
 clock = pygame.time.Clock()
