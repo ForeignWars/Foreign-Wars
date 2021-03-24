@@ -18,9 +18,22 @@ limitrove = {
   'vaedran':{krar-zimak,frodrine,andrinos,phosthonia}
   'andrinos':{krar-zimak,vaedran,szet-as}
   'szet-as':{andrinos,mentu-hotep}
+  'mentu-hotep':{eichornia,ryutada,kuargen,gargle,zhoshusat}
+  'eichornia':{mentu-hotep,ryutada,loukinir,zhoshusat,alaneo}
+  'ryutada':{mentu-hotep,eichornia,loukinir,kuargen}
+  'kuargen':{}
   '':{}
   '':{}
   '':{}
+  '':{}
+  '':{}
+  '':{}
+  '':{}
+  '':{}
+  '':{}
+  '':{}
+  '':{}
+  
 }
 
 #la région=toute les régions limitroves.
