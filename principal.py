@@ -19,9 +19,9 @@ clock=pygame.time.Clock()
 
 
 limitrophe = {
-  'thukten':{lildeilon,inno-6,aorizia},
-  'lildeilon':{thukten,inno-6,ordogas,amlivor},
-  'inno-6':{thukten,lildeilon,aorizia,amlivor,azaire},
+  'thukten':{'lildeilon","inno-6","aorizia"},
+  'lildeilon':{'thukten","inno-6","ordogas","amlivor"},
+  'inno-6':{'thukten","lildeilon","aorizia","amlivor","azaire"},
   'aorizia':{thukten,inno-6,azaire,}
   'ordogas':{lildeilon,amlivor,baerdan,krar-zimak,}
   'amlivor':{lildeilon,inno-6,ordogas,azaire,baerdan,frodrine}
@@ -54,11 +54,19 @@ limitrophe = {
   'tchorroppoi':{kayal,raseldor,karithyr,vaelinore,qeralukia}
   'qeralukia':{kayal,tchorroppoi,vaelinore,drulguk}
   'vaelinore':{kayal,tchorroppoi,qeralukia,karithyr,drulguk}
-  'karithyr':{raseldor,tchorroppoi,vaelinore}
+  'karithyr':{raseldor,tchorroppoi,vaelinore,drulguk}
+  'drulguk':{qeralukia,vaelinore,karithyr}
+  'nordland':{diable,finnär,vestgeir,dawi}
+  'dawi':{nordland,scalare,helek}
+  'scalare':{'dawi','helek','al-rion','sslitherin'}
   '':{}
   '':{}
   '':{}
   '':{}
-  
+  '':{}
+  '':{}
+  '':{}
+  '':{}
+  '':{}  
 }
 
