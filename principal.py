@@ -4,7 +4,7 @@ import random
 import time
 from pygame.locals impor
 
-limitrophes = {
+limitrophe = {
   'thukten':{lildeilon,inno-6,aorizia},
   'lildeilon':{thukten,inno-6,ordogas,amlivor},
   'inno-6':{thukten,lildeilon,aorizia,amlivor,azaire},
@@ -21,9 +21,9 @@ limitrophes = {
   'mentu-hotep':{eichornia,ryutada,kuargen,gargle,zhoshusat}
   'eichornia':{mentu-hotep,ryutada,loukinir,zhoshusat,alaneo}
   'ryutada':{mentu-hotep,eichornia,loukinir,kuargen}
-  'kuargen':{}
-  '':{}
-  '':{}
+  'kuargen':{mentu-hotep,ryutada,gargle,thunodel}
+  'gargle':{mentu-hotep,kuargen,thunodel,zhoshusat,alaneo}
+  'alaneo':{eichornia,loukinir,thunodel,}
   '':{}
   '':{}
   '':{}
@@ -36,4 +36,3 @@ limitrophes = {
   
 }
 
-#la région=toute les régions limitrophes
