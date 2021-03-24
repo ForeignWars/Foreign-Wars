@@ -4,7 +4,7 @@ import random
 import time
 from pygame.locals impor
 
-limitrove = {
+limitrophes = {
   'thukten':{lildeilon,inno-6,aorizia},
   'lildeilon':{thukten,inno-6,ordogas,amlivor},
   'inno-6':{thukten,lildeilon,aorizia,amlivor,azaire},
@@ -36,4 +36,4 @@ limitrove = {
   
 }
 
-#la région=toute les régions limitroves.
+#la région=toute les régions limitrophes
