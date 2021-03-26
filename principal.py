@@ -2,7 +2,8 @@ import pygame
 import os
 import random
 import time
-from pygame.locals impor
+from pygame.locals import *
+from Nation import Nation
 pygame.init()
 
 #---------ecran---------
