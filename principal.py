@@ -77,3 +77,14 @@ limitrophe = {
   'brillup':{'idenia','baganda','murem'},
   'murem':{'shyzzia','brillup'},
 }
+
+def interface ():
+  
+  
+def condition attaque ():
+  
+  
+def tour machine ():
+  
+  
+def 
