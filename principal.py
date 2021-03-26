@@ -78,13 +78,12 @@ limitrophe = {
   'murem':{'shyzzia','brillup'},
 }
 
-def interface ():
+def interface (): #faire une interface
   
   
-def condition_attaque ():
+def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   
   
-def tour_machine ():
+def tour_machine (): #fonction qui fait jouer la machine
   
   
-def 
