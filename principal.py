@@ -18,6 +18,7 @@ pygame.display.set_caption('Foreign Wars')
 #démarrage du timer
 clock=pygame.time.Clock()
 
+tour=0  #initialisation du nombre de tour
 
 limitrophe = {
   'thukten':{'lildeilon','inno-6','aorizia'},
@@ -79,6 +80,11 @@ limitrophe = {
 }
 
 def interface (): #faire une interface
+  
+  
+def qui_qui_joue(): #fonction qui permet de savoir qui joue
+  joueur={t1,t2,t3,t4}
+  
   
   
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
