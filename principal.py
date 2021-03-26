@@ -81,10 +81,10 @@ limitrophe = {
 def interface ():
   
   
-def condition attaque ():
+def condition_attaque ():
   
   
-def tour machine ():
+def tour_machine ():
   
   
 def 
