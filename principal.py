@@ -83,8 +83,9 @@ def interface (): #faire une interface
   
   
 def qui_qui_joue(): #fonction qui permet de savoir qui joue
-
- 
+  faction_list=(1,2,3,4)
+   
+  
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   
   
