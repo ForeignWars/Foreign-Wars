@@ -191,38 +191,40 @@ class Application :
         self._initialiser()
         self.ecran = Jeu(self, self.groupeGlobal)
 
-    def quitter(self) :
-        self.statut = False
+    def quitter(self) : #fonction qui finit le programme
+        self.statut = False #kill le programme
 
-    def update(self) :
-        events = pygame.event.get()
+    def update(self) : #fonction qui rafraichit le jeu
+        events = pygame.event.get() #remplace event par le evengt actuelle
 
         for event in events :
             if event.type == pygame.QUIT :
                 self.quitter()
                 return
 
-        self.fenetre.fill(self.fond)
-        self.ecran.update(events)
+        self.fenetre.fill(self.fond)#on remplit la fenetre par la couleur de fond
+        self.ecran.update(events)#appelle event
         self.groupeGlobal.update()
         self.groupeGlobal.draw(self.fenetre)
         pygame.display.update()
+
+        
 def interface (): #faire une interface
-  
+  totot=totot  
   
 def qui_qui_joue(): #fonction qui permet de savoir qui joue
   faction_list=(1,2,3,4)
-   
+  totot=totot  
   
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
-  
+  totot=totot  
   
 def tour_machine (): #fonction qui fait jouer la machine
+  totot=totot  
   
-  
-app = Application()
-app.menu()
+app = Application() #appelle la fonction Application
+app.menu()  
 while app.statut :
-    app.update()
-    clock.tick(30)
-pygame.quit()
+    app.update()  #appelle uopdate pour rafraichir l'interface
+    clock.tick(30)  #avec la fréquence de 30 fois par secondes
+pygame.quit() #fin du programme
