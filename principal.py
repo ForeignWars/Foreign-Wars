@@ -82,8 +82,8 @@ class Menu:
     """création et gestions des boutons du menu"""
     def __init__(self, application, *groupes) :
         self.couleurs = dict(
-            normal=(0, 200, 0),
-            survol=(0, 200, 200),
+            normal=(133, 1, 100),
+            survol=(96, 0, 0),
         )
         font = pygame.font.SysFont('Garamond', 25, bold=True) #police d'écritur eainsi que taille de celle-ci.
         # noms des menus et commandes associées
@@ -165,7 +165,7 @@ class Application :
         pygame.init()
         pygame.display.set_caption("ISN ILIES")
 
-        self.fond = (150,)*3
+        self.fond = (235,97,4)
 
         self.fenetre = pygame.display.set_mode((largeur_fenetre,hauteur_fenetre))
         # Groupe de sprites utilisé pour l'affichage
@@ -207,22 +207,22 @@ class Application :
         self.groupeGlobal.draw(self.fenetre)
         pygame.display.update()
 
-        
+
 def interface (): #faire une interface
-  totot=totot  
-  
+  totot=totot
+
 def qui_qui_joue(): #fonction qui permet de savoir qui joue
   faction_list=(1,2,3,4)
-  totot=totot  
-  
+  totot=totot
+
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
-  totot=totot  
-  
+  totot=totot
+
 def tour_machine (): #fonction qui fait jouer la machine
-  totot=totot  
-  
+  totot=totot
+
 app = Application() #appelle la fonction Application
-app.menu()  
+app.menu()
 while app.statut :
     app.update()  #appelle uopdate pour rafraichir l'interface
     clock.tick(30)  #avec la fréquence de 30 fois par secondes
