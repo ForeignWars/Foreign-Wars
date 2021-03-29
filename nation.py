@@ -1,5 +1,5 @@
 import pygame
-import Time
+import time
 
 class Nation:
   pygame.init()
