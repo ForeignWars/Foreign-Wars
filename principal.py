@@ -79,29 +79,29 @@ limitrophe = {
   'murem':{'shyzzia','brillup'},
 }
 class Menu:
-    """création et gedtions des boutons du menu"""
+    """création et gestions des boutons du menu"""
     def __init__(self, application, *groupes) :
         self.couleurs = dict(
             normal=(0, 200, 0),
             survol=(0, 200, 200),
         )
-        font = pygame.font.SysFont('Garamond', 25, bold=True)
+        font = pygame.font.SysFont('Garamond', 25, bold=True) #police d'écritur eainsi que taille de celle-ci.
         # noms des menus et commandes associées
         items = (
-            ('JOUER', application.jeu),
-            ('QUITTER', application.quitter)
+            ('JOUER', application.jeu),#texte du premier bouton jouer
+            ('QUITTER', application.quitter)#texte du deuxième bouton, quitter
         )
-        x = 400
+        x = 400   #position premier bouton (jouer)
         y = 200
         self._boutons = []
         for texte, cmd in items :
             mb = MenuBouton(
                 texte,
-                self.couleurs['normal'],
+                self.couleurs['survol'],
                 font,
                 x,
                 y,
-                200,
+                200, #taille rectangla avec x et y x=200 et y=50
                 50,
                 cmd
             )
@@ -118,7 +118,7 @@ class Menu:
                 # Changement du curseur par un quelconque
                 pygame.mouse.set_cursor(*pygame.cursors.tri_left)
                 # Changement de la couleur du bouton
-                bouton.dessiner(self.couleurs['survol'])
+                bouton.dessiner(self.couleurs['normal'])
                 # Si le clic gauche a été pressé
                 if clicGauche :
                     # Appel de la fonction du bouton
@@ -126,7 +126,7 @@ class Menu:
                 break
             else :
                 # Le pointeur n'est pas au-dessus du bouton
-                bouton.dessiner(self.couleurs['normal'])
+                bouton.dessiner(self.couleurs['survol'])
         else :
             # Le pointeur n'est pas au-dessus d'un des boutons
             # initialisation au pointeur par défaut
@@ -136,6 +136,7 @@ class Menu:
 
 
 class MenuBouton(pygame.sprite.Sprite) :
+    """  fonction qui fait les boutons """
     """ Création d'un simple bouton rectangulaire """
     def __init__(self, texte, couleur, font, x, y, largeur, hauteur, commande) :
         super().__init__()
@@ -144,11 +145,11 @@ class MenuBouton(pygame.sprite.Sprite) :
         self.image = pygame.Surface((largeur, hauteur))
 
         self.rect = self.image.get_rect()
-        self.rect.center = (x, y)
+        self.rect.center = (x, y) #voir au dessus
 
         self.texte = font.render(texte, True, (0, 0, 0))
         self.rectTexte = self.texte.get_rect()
-        self.rectTexte.center = (largeur/2, hauteur/2)
+        self.rectTexte.center = (largeur/2, hauteur/2)#permet de centre le texte dans le rectangle
 
         self.dessiner(couleur)
 
