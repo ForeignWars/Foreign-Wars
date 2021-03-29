@@ -146,7 +146,7 @@ class MenuBouton(pygame.sprite.Sprite) :
         self.rect = self.image.get_rect()
         self.rect.center = (x, y) #voir au dessus
 
-        self.texte = font.render(texte, True, (0, 0, 0))
+        self.texte = font.render(texte, True, (255, 255, 255))
         self.rectTexte = self.texte.get_rect()
         self.rectTexte.center = (largeur/2, hauteur/2)#permet de centre le texte dans le rectangle
 
