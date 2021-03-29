@@ -7,3 +7,7 @@ class Nation:
     self.color = color
     self.health = health
     self.graph = graph
+    self.units=[]
+  def faction(self, faction):
+    faction.units.append(self.units)
+    
