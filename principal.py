@@ -136,8 +136,7 @@ class Menu:
 
 
 class MenuBouton(pygame.sprite.Sprite) :
-    """  fonction qui fait les boutons """
-    """ Création d'un simple bouton rectangulaire """
+    """  fonction qui fait les boutons et crée un simple bouton rectangulaire """
     def __init__(self, texte, couleur, font, x, y, largeur, hauteur, commande) :
         super().__init__()
         self._commande = commande
