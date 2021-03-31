@@ -172,8 +172,8 @@ class Jeu :
         items = (
             ('NAINS', application.quitter),#texte du premier bouton jouer
             ('DEMONS', application.quitter)#texte du deuxième bouton, quitter
-            ('CENTAURES', application.quitter)#texte du deuxième bouton, quitter
-            ('ORCS', application.quitter)#texte du deuxième bouton, quitter
+            #('CENTAURES', application.quitter)#texte du deuxième bouton, quitter
+            #('ORCS', application.quitter)#texte du deuxième bouton, quitter
         )
         x = largeur_fenetre/2   #position première fenêtre, la deuxième est juste décalé de 120 en y vers le bas.
         y = (hauteur_fenetre/2)-60
@@ -219,7 +219,7 @@ class Application :
     """ Classe maîtresse gérant les différentes interfaces du jeu """
     def __init__(self) :
         pygame.init()
-        pygame.display.set_caption("ISN ILIES")
+        pygame.display.set_caption("Foreign-Wars")
 
         self.fond = (235,97,4)  #couleur du fond
 
@@ -264,6 +264,7 @@ class Application :
         self.groupeGlobal.update()
         self.groupeGlobal.draw(self.fenetre)
         pygame.display.update()
+
 
 
 
