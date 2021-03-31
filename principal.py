@@ -270,9 +270,11 @@ class Application :
 def interface (): #faire une interface
   totot=totot
 
-def qui_qui_joue(): #fonction qui permet de savoir qui joue
-  faction_list=(1,2,3,4)
-  totot=totot
+def player_order(): #fonction qui permet de savoir qui qui joue
+  faction_list=[1,2,3,4]
+  player_faction=dwarf
+
+class Dwarf(Faction):
 
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   totot=totot
