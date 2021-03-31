@@ -162,36 +162,55 @@ class MenuBouton(pygame.sprite.Sprite) :
 
 class Jeu :
     """ Simulacre de l'interface du jeu """
-    def __init__(self, jeu, *groupes) :
-        self._fenetre = jeu.fenetre
-        jeu.fond = (0, 0, 0)
-
-        from itertools import cycle
-        couleurs = [(0, 48, i) for i in range(0, 256, 15)]
-        couleurs.extend(sorted(couleurs[1:-1], reverse=True))
-        self._couleurTexte = cycle(couleurs)
-
-        self._font = pygame.font.SysFont('Helvetica', 36, bold=True)
-        self.creerTexte()
-        self.rectTexte = self.texte.get_rect()
-        self.rectTexte.center = (surfaceW/2, surfaceH/2)
-        # Création d'un event
-        self._CLIGNOTER = pygame.USEREVENT + 1
-        pygame.time.set_timer(self._CLIGNOTER, 80)
-
-    def creerTexte(self) :
-        self.texte = self._font.render(
-            'LE JEU EST EN COURS D\'EXÉCUTION',
-            True,
-            next(self._couleurTexte)
+    def __init__(self, application, *groupes) :
+        self.couleurs = dict(
+            normal=(80, 80, 80),
+            survol=(0, 0, 0),
         )
-
+        font = pygame.font.SysFont('Garamond', 25, bold=True) #police d'écritur eainsi que taille de celle-ci.
+        # noms des menus et commandes associées
+        items = (
+            ('NAINS', application.quitter),#texte du premier bouton jouer
+            ('DEMONS', application.quitter)#texte du deuxième bouton, quitter
+            ('CENTAURES', application.quitter)#texte du deuxième bouton, quitter
+            ('ORCS', application.quitter)#texte du deuxième bouton, quitter
+        )
+        x = largeur_fenetre/2   #position première fenêtre, la deuxième est juste décalé de 120 en y vers le bas.
+        y = (hauteur_fenetre/2)-60
+        self._boutons = []
+        for texte, cmd in items :
+            mb = MenuBouton(
+                texte,
+                self.couleurs['survol'],
+                font,
+                x,
+                y,
+                200, #taille rectangla avec x et y x=200 et y=50
+                50,
+                cmd
+            )
+            self._boutons.append(mb)
+            y += 120    #décalage de 120 vers lez bas pour la deuxième fenêtre.
+            for groupe in groupes :
+                groupe.add(mb)
     def update(self, events) :
-        self._fenetre.blit(self.texte, self.rectTexte)
-        for event in events :
-            if event.type == self._CLIGNOTER :
-                self.creerTexte()
+        clicGauche, *_ = pygame.mouse.get_pressed()
+        posPointeur = pygame.mouse.get_pos()
+        for bouton in self._boutons :
+            # Si le pointeur souris est au-dessus d'un bouton
+            if bouton.rect.collidepoint(*posPointeur) :
+                # Changement du curseur par un quelconque
+                pygame.mouse.set_cursor(*pygame.cursors.tri_left)
+                # Changement de la couleur du bouton
+                bouton.dessiner(self.couleurs['normal'])
+                # Si le clic gauche a été pressé
+                if clicGauche :
+                    # Appel de la fonction du bouton
+                    bouton.executerCommande()
                 break
+            else :
+                # Le pointeur n'est pas au-dessus du bouton
+                bouton.dessiner(self.couleurs['survol'])
 
     def detruire(self) :
         pygame.time.set_timer(self._CLIGNOTER, 0) # désactivation du timer
@@ -251,12 +270,10 @@ class Application :
 def interface (): #faire une interface
   totot=totot
 
-def player_order(): #fonction qui permet de savoir qui qui joue
-  faction_list=[1,2,3,4]
-  player_faction=dwarf
+def qui_qui_joue(): #fonction qui permet de savoir qui joue
+  faction_list=(1,2,3,4)
+  totot=totot
 
-dwarf=Faction(Dawi, 5, 3, fortress, gyrocopter, 0)
-  
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   totot=totot
 
