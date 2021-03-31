@@ -91,8 +91,8 @@ class Menu:
             ('JOUER', application.jeu),#texte du premier bouton jouer
             ('QUITTER', application.quitter)#texte du deuxième bouton, quitter
         )
-        x = 400   #position premier bouton (jouer)
-        y = 200
+        x = largeur_fenetre/2   #position première fenêtre, la deuxième est juste décalé de 120 en y vers le bas.
+        y = (hauteur_fenetre/2)-60
         self._boutons = []
         for texte, cmd in items :
             mb = MenuBouton(
@@ -106,7 +106,7 @@ class Menu:
                 cmd
             )
             self._boutons.append(mb)
-            y += 120
+            y += 120    #décalage de 120 vers lez bas pour la deuxième fenêtre.
             for groupe in groupes :
                 groupe.add(mb)
     def update(self, events) :
@@ -165,7 +165,7 @@ class Application :
         pygame.init()
         pygame.display.set_caption("ISN ILIES")
 
-        self.fond = (235,97,4)
+        self.fond = (235,97,4)  #couleur du fond
 
         self.fenetre = pygame.display.set_mode((largeur_fenetre,hauteur_fenetre))
         # Groupe de sprites utilisé pour l'affichage
