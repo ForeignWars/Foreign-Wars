@@ -88,7 +88,7 @@ class Menu:
         font = pygame.font.SysFont('Garamond', 25, bold=True) #police d'écritur eainsi que taille de celle-ci.
         # noms des menus et commandes associées
         items = (
-            ('JOUER', application.jeu),#texte du premier bouton jouer
+            ('JOUER', application.btn_classe),#texte du premier bouton jouer
             ('QUITTER', application.quitter)#texte du deuxième bouton, quitter
         )
         x = largeur_fenetre/2   #position première fenêtre, la deuxième est juste décalé de 120 en y vers le bas.
@@ -140,12 +140,16 @@ class MenuBouton(pygame.sprite.Sprite) :
     def __init__(self, texte, couleur, font, x, y, largeur, hauteur, commande) :
         super().__init__()
         self._commande = commande
+
         self.image = pygame.Surface((largeur, hauteur))
+
         self.rect = self.image.get_rect()
         self.rect.center = (x, y) #voir au dessus
+
         self.texte = font.render(texte, True, (255, 255, 255))
         self.rectTexte = self.texte.get_rect()
         self.rectTexte.center = (largeur/2, hauteur/2)#permet de centre le texte dans le rectangle
+
         self.dessiner(couleur)
 
     def dessiner(self, couleur) :
@@ -156,7 +160,7 @@ class MenuBouton(pygame.sprite.Sprite) :
         # Appel de la commande du bouton
         self._commande()
 
-class Jeu :
+class Btn_classe :
     """ Simulacre de l'interface du jeu """
     def __init__(self, application, *groupes) :
         self.couleurs = dict(
@@ -167,28 +171,21 @@ class Jeu :
         # noms des menus et commandes associées
         items = (
             ('NAINS', application.quitter),#texte du premier bouton jouer
-            ('DEMONS', application.quitter)#texte du deuxième bouton, quitter
-            #('CENTAURES', application.quitter)#texte du deuxième bouton, quitter
-            #('ORCS', application.quitter)#texte du deuxième bouton, quitter
+            ('DEMONS', application.quitter),#texte du deuxième bouton, quitter
+            ('CENTAURES', application.quitter),#texte du deuxième bouton, quitter
+            ('ORCS', application.quitter)#texte du deuxième bouton, quitter
         )
-        x = largeur_fenetre/2   #position première fenêtre, la deuxième est juste décalé de 120 en y vers le bas.
-        y = (hauteur_fenetre/2)-60
+        x = (largeur_fenetre/2) -330  #position première fenêtre, la deuxième est juste décalé de 120 en y vers le bas.
+        y = (hauteur_fenetre/2)
         self._boutons = []
         for texte, cmd in items :
-            mb = MenuBouton(
-                texte,
-                self.couleurs['survol'],
-                font,
-                x,
-                y,
-                200, #taille rectangla avec x et y x=200 et y=50
-                50,
-                cmd
-            )
+            mb = MenuBouton(texte,self.couleurs['survol'],font,x,y,200,50,cmd)
             self._boutons.append(mb)
-            y += 120    #décalage de 120 vers lez bas pour la deuxième fenêtre.
+            x += 220
+
             for groupe in groupes :
                 groupe.add(mb)
+
     def update(self, events) :
         clicGauche, *_ = pygame.mouse.get_pressed()
         posPointeur = pygame.mouse.get_pos()
@@ -216,7 +213,9 @@ class Application :
     def __init__(self) :
         pygame.init()
         pygame.display.set_caption("Foreign-Wars")
+
         self.fond = (235,97,4)  #couleur du fond
+
         self.fenetre = pygame.display.set_mode((largeur_fenetre,hauteur_fenetre))
         # Groupe de sprites utilisé pour l'affichage
         self.groupeGlobal = pygame.sprite.Group()
@@ -235,16 +234,18 @@ class Application :
         self._initialiser()
         self.ecran = Menu(self, self.groupeGlobal)
 
-    def jeu(self) :
+    def btn_classe(self) :
         # Affichage du jeu
         self._initialiser()
-        self.ecran = Jeu(self, self.groupeGlobal)
+        self.ecran = Btn_classe(self, self.groupeGlobal)
+
 
     def quitter(self) : #fonction qui finit le programme
         self.statut = False #kill le programme
 
     def update(self) : #fonction qui rafraichit le jeu
         events = pygame.event.get() #remplace event par le evengt actuelle
+
         for event in events :
             if event.type == pygame.QUIT :
                 self.quitter()
@@ -256,12 +257,17 @@ class Application :
         self.groupeGlobal.draw(self.fenetre)
         pygame.display.update()
 
+
+
+
 def interface (): #faire une interface
   totot=totot
 
 def player_order(): #fonction qui permet de savoir qui qui joue
   faction_list=[1,2,3,4]
   player_faction=dwarf
+
+
 
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   totot=totot
