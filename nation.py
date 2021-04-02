@@ -1,5 +1,6 @@
 import pygame
 import time
+from faction import Faction
 
 class Nation:
   pygame.init()
@@ -12,5 +13,5 @@ class Nation:
     self.y=y
   def faction(self, faction):
     faction.units.append(self.units)
-  def conquered (self,faction):
+  def conquered (self, faction):
     fenetre.blit(faction.emblem, (self.x, self.y))
