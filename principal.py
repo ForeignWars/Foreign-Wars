@@ -4,6 +4,8 @@ import random
 import time
 from pygame.locals import *
 from nation import Nation
+from faction import Faction
+from races import *
 import PIL.Image          				# Module PIL.Image
 pygame.init()
 
@@ -276,7 +278,7 @@ def player_order(): #fonction qui permet de savoir qui qui joue
   faction_list=[1,2,3,4]
   player_faction=dwarf
 
-
+NAINS=Dwarf(dawi, 3, gyrocopter, embleme_nain)
 
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   totot=totot
