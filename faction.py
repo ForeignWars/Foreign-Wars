@@ -2,18 +2,13 @@ import pygame
 from nation import Nation
 
 class Faction:
-  def __init__ (self, start, gold, resource, power, commander, army, emblem):
-    self.start=start
+  def __init__ (self, gold, army):
     self.gold=gold
-    self.resource=resource
-    self.power=power
-    self.commander=commander
     self.units=[]
     self.attack_units=[]
     self.army=army
     self.attack_army=self.army-1
     self.nations=[]
-    self.emblem=emblem
   def attack (self, nation):
     self.attack_units.append(self.units)
     self.units.clear()
