@@ -140,16 +140,12 @@ class MenuBouton(pygame.sprite.Sprite) :
     def __init__(self, texte, couleur, font, x, y, largeur, hauteur, commande) :
         super().__init__()
         self._commande = commande
-
         self.image = pygame.Surface((largeur, hauteur))
-
         self.rect = self.image.get_rect()
         self.rect.center = (x, y) #voir au dessus
-
         self.texte = font.render(texte, True, (255, 255, 255))
         self.rectTexte = self.texte.get_rect()
         self.rectTexte.center = (largeur/2, hauteur/2)#permet de centre le texte dans le rectangle
-
         self.dessiner(couleur)
 
     def dessiner(self, couleur) :
@@ -220,9 +216,7 @@ class Application :
     def __init__(self) :
         pygame.init()
         pygame.display.set_caption("Foreign-Wars")
-
         self.fond = (235,97,4)  #couleur du fond
-
         self.fenetre = pygame.display.set_mode((largeur_fenetre,hauteur_fenetre))
         # Groupe de sprites utilisé pour l'affichage
         self.groupeGlobal = pygame.sprite.Group()
@@ -246,14 +240,11 @@ class Application :
         self._initialiser()
         self.ecran = Jeu(self, self.groupeGlobal)
 
-
-
     def quitter(self) : #fonction qui finit le programme
         self.statut = False #kill le programme
 
     def update(self) : #fonction qui rafraichit le jeu
         events = pygame.event.get() #remplace event par le evengt actuelle
-
         for event in events :
             if event.type == pygame.QUIT :
                 self.quitter()
@@ -264,9 +255,6 @@ class Application :
         self.groupeGlobal.update()
         self.groupeGlobal.draw(self.fenetre)
         pygame.display.update()
-
-
-
 
 def interface (): #faire une interface
   totot=totot
