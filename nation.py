@@ -12,5 +12,5 @@ class Nation:
     self.y=y
   def faction(self, faction):
     faction.units.append(self.units)
-  def conquered (self.faction):
-    fenetre.blit(emblem, (self.x, self.y))
+  def conquered (self,faction):
+    fenetre.blit(faction.emblem, (self.x, self.y))
