@@ -8,7 +8,6 @@ class Faction:
     self.attack_units=[]
     self.army=army
     self.attack_army=self.army-1
-    self.nations=[]
   def attack (self, nation):
     self.attack_units.append(self.units)
     self.units.clear()
