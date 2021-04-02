@@ -263,8 +263,6 @@ def player_order(): #fonction qui permet de savoir qui qui joue
   faction_list=[1,2,3,4]
   player_faction=dwarf
 
-class Dwarf(Faction):
-
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   totot=totot
 
