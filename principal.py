@@ -4,6 +4,7 @@ import random
 import time
 from pygame.locals import *
 from nation import Nation
+import PIL.Image          				# Module PIL.Image
 pygame.init()
 
 #---------ecran---------
@@ -78,6 +79,14 @@ limitrophe = {
   'brillup':{'idenia','baganda','murem'},
   'murem':{'shyzzia','brillup'},
 }
+
+embleme_centaure=PIL.Image.open("SPRITES/Centaures/Emb_Centaure.png")
+embleme_demon=PIL.Image.open("SPRITES/Demons/Emb_Demon.png")
+embleme_nains=PIL.Image.open("SPRITES/Nains/Emb_Nain.png")
+embleme_orc=PIL.Image.open("SPRITES/Nains/Emb_Nain.png")
+
+
+
 class Menu:
     """création et gestions des boutons du menu"""
     def __init__(self, application, *groupes) :
