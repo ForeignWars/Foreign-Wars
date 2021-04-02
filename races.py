@@ -9,3 +9,4 @@ class Dwarf (Faction):
     self.gyrocopter=gyrocopter
     self.dwarf_emblem=dwarf_emblem
   def fortress():
+    toto=toto
