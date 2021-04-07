@@ -1,5 +1,5 @@
 import pygame
-from nation import Nation
+from nation import *
 
 class Faction:
   def __init__ (self, gold, army):
