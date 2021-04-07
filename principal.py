@@ -84,7 +84,7 @@ limitrophe = {
 
 embleme_centaure=PIL.Image.open("SPRITES/Centaures/Emb_Centaure.png")
 embleme_demon=PIL.Image.open("SPRITES/Demons/Emb_Demon.png")
-embleme_nains=PIL.Image.open("SPRITES/Nains/Emb_Nain.png")
+embleme_nain=PIL.Image.open("SPRITES/Nains/Emb_Nain.png")
 embleme_orc=PIL.Image.open("SPRITES/Nains/Emb_Nain.png")
 
 
