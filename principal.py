@@ -6,7 +6,6 @@ from pygame.locals import *
 from nation import Nation
 from faction import Faction
 from races import *
-import PIL.Image          				# Module PIL.Image
 pygame.init()
 
 #---------ecran---------
@@ -82,10 +81,10 @@ limitrophe = {
   'murem':{'shyzzia','brillup'},
 }
 
-embleme_centaure=PIL.Image.open("SPRITES/Centaures/Emb_Centaure.png")
-embleme_demon=PIL.Image.open("SPRITES/Demons/Emb_Demon.png")
-embleme_nain=PIL.Image.open("SPRITES/Nains/Emb_Nain.png")
-embleme_orc=PIL.Image.open("SPRITES/Nains/Emb_Nain.png")
+embleme_centaure    =   pygame.image.load("SPRITES/Centaures/Emb_Centaure.png")
+embleme_demon       =   pygame.image.load("SPRITES/Demons/Emb_Demon.png")
+embleme_nain        =   pygame.image.load("SPRITES/Nains/Emb_Nain.png")
+embleme_orc         =   pygame.image.load("SPRITES/Nains/Emb_Nain.png")
 
 
 
