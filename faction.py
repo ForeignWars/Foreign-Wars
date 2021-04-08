@@ -25,6 +25,8 @@ class Faction:
       self.units.append('4')
     if Nation.health>=self.attack_army:
       Nation.health-=self.attack_army
+      self.attack_army=0
+      self.attack_units.clear()
     else:
       leftover = self.army - Nation.health
       while leftover>0:
