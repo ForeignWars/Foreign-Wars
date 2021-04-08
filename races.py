@@ -18,3 +18,21 @@ class Dwarf (Faction):
   def fortress(Nation):
     if mithril>=30:
       Nation.health+=10
+
+class Orc (Faction):
+  def __init__(self, start, rage, berzerker, orc_emblem):
+    Faction.__init__(self, gold, army)
+    self.gold=5
+    self.army=0
+    self.start=(start.x, start.y)
+    self.rage=rage
+    self.berzerker=berzerker
+    self.orc_emblem=orc_emblem
+    self.nations=[start]
+  def conquered_nations():
+    for country in self.nations:
+      country.conquered
+  def waaagh (Nation):
+    if rage>=50:
+      self.army=self.army*2
+      self.units
