@@ -54,3 +54,21 @@ class Demon (Faction):
     if souls>=80:
       self.nations.append(Nation)
       Nation.conquered
+      Nation.units.clear()
+     
+class Centaure (Faction):
+  def __init__(self, start, totems, centaurion, centaur_emblem):
+    Faction.__init__(self, gold, army)
+    self.gold=5
+    self.army=0
+    self.start=(start.x, start.y)
+    self.totems=totems
+    self.centaurion=centaurion
+    self.centaur_emblem=centaur_emblem
+    self.nations=[start]
+  def conquered_nations():
+    for country in self.nations:
+      country.conquered
+  def volley(Nation):
+    if totems>=16:
+      Nation.health-=5
