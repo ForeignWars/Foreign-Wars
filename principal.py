@@ -277,7 +277,7 @@ def player_order(): #fonction qui permet de savoir qui qui joue
   faction_list=[1,2,3,4]
   player_faction=dwarf
 
-#NAINS=Dwarf(dawi, 3, gyrocopter, embleme_nain)
+NAINS=Dwarf(dawi, 3, 0, embleme_nain)
 
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   totot=totot
