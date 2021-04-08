@@ -15,5 +15,6 @@ class Dwarf (Faction):
   def conquered_nations():
     for country in self.nations:
       country.conquered
-  def fortress():
-    toto=toto
+  def fortress(Nation):
+    if mithril>=30:
+      Nation.health+=10
