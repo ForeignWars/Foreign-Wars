@@ -43,7 +43,7 @@ class Faction:
             Nation.units.remove('2')
             leftover-=2
             self.attack_units.remove('2')
-          elif '1' in Hation.units:
+          elif '1' in Nation.units:
             Nation.units.remove('1')
             leftover-=1
             self.attack_units.remove('1')
