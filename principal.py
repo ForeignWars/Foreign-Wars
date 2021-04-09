@@ -278,6 +278,7 @@ def player_order(): #fonction qui permet de savoir qui qui joue
   player_faction=dwarf
 
 NAINS=Dwarf(dawi, 3, 0, embleme_nain)
+ORCS=Orc(defnar, 0, 0, embleme_orc)
 
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   totot=totot
