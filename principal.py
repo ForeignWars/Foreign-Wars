@@ -279,6 +279,8 @@ def player_order(): #fonction qui permet de savoir qui qui joue
 
 NAINS=Dwarf(dawi, 3, 0, embleme_nain)
 ORCS=Orc(defnar, 0, 0, embleme_orc)
+DEMONS=Demon(diable, 0, 0, embleme_demon)
+CENTAURES=Centaur(andrinos, 4, 0, embleme_centaure)
 
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   totot=totot
