@@ -249,6 +249,21 @@ class Application :
         self._initialiser()
         self.ecran = Btn_classe(self, self.groupeGlobal)
 
+    def startN(self):
+        nation="nain"
+        jeu(nation)
+
+    def startD(self):
+        nation="demon"
+        jeu(nation)
+
+    def startC(self):
+        nation="centaure"
+        jeu(nation)
+
+    def startO(self):
+        nation="orc"
+        jeu(nation)
 
     def quitter(self) : #fonction qui finit le programme
         self.statut = False #kill le programme
