@@ -273,6 +273,16 @@ class Application :
 def interface (): #faire une interface
   totot=totot
 
+def jeu(nation):
+    faction_list=[1,2,3,4]
+    player_faction=Dwarf
+    while len(faction_list)>1:
+        faction_list[0]=nation
+        faction_list[1]=
+        faction_list[2]=
+        faction_list[3]=
+  
+
 def player_order(): #fonction qui permet de savoir qui qui joue
   faction_list=[1,2,3,4]
   player_faction=dwarf
