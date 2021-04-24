@@ -9,12 +9,12 @@ from races import *
 pygame.init()
 
 #---------ecran---------
-#*inition de la taille de l'écran
+#définition de la taille de l'écran
 largeur_fenetre=1366
 hauteur_fenetre=768
 #définition des polices affichées à l'écran
 font_style=pygame.font.SysFont("Garamond",25)
-#creation de l'écran
+#création de l'écran
 fenetre= pygame.display.set_mode((largeur_fenetre,hauteur_fenetre))
 pygame.display.set_caption('Foreign Wars')
 #démarrage du timer
@@ -81,12 +81,27 @@ limitrophe = {
   'murem':{'shyzzia','brillup'},
 }
 
-embleme_centaure    =   pygame.image.load("SPRITES/Centaures/Emb_Centaure.png")
-embleme_demon       =   pygame.image.load("SPRITES/Demons/Emb_Demon.png")
-embleme_nain        =   pygame.image.load("SPRITES/Nains/Emb_Nain.png")
-embleme_orc         =   pygame.image.load("SPRITES/Nains/Emb_Nain.png")
-
-
+#import des images
+embleme_centaure = pygame.image.load("SPRITES/Centaures/Emb_Centaure.png")
+embleme_demon = pygame.image.load("SPRITES/Demons/Emb_Demon.png")
+embleme_nain = pygame.image.load("SPRITES/Nains/Emb_Nain.png")
+embleme_orc = pygame.image.load("SPRITES/Orcs/Emb_Orc.png")
+img_inf_centaure = pygame.image.load("SPRITES/Centaures/Inf_Centaure.png")
+img_cav_centaure = pygame.image.load("SPRITES/Centaures/Cav_Centaure.png")
+img_art_centaure = pygame.image.load("SPRITES/Centaures/Art_Centaure.png")
+img_spec_centaure = pygame.image.load("SPRITES/Centaures/Spec_Centaure.png")
+img_inf_demon = pygame.image.load("SPRITES/Demons/Inf_Demon.png")
+img_cav_demon = pygame.image.load("SPRITES/Demons/Cav_Demon.png")
+img_art_demon = pygame.image.load("SPRITES/Demons/Art_Demon.png")
+img_spec_demon = pygame.image.load("SPRITES/Demons/Spec_Demon.png")
+img_inf_nain = pygame.image.load("SPRITES/Nains/Inf_Nain.png")
+img_cav_nain = pygame.image.load("SPRITES/Nains/Cav_Nain.png")
+img_art_nain = pygame.image.load("SPRITES/Nains/Art_Nain.png")
+img_spec_nain = pygame.image.load("SPRITES/Nains/Spec_Nain.png")
+img_inf_orc = pygame.image.load("SPRITES/Orcs/Inf_Orc.png")
+img_cav_orc = pygame.image.load("SPRITES/Orcs/Cav_Orc.png")
+img_art_orc = pygame.image.load("SPRITES/Orcs/Art_Orc.png")
+img_spec_orc = pygame.image.load("SPRITES/Orcs/Spec_Orc.png")
 
 class Menu:
     """création et gestions des boutons du menu"""
@@ -179,11 +194,11 @@ class Btn_classe :
         )
         font = pygame.font.SysFont('Garamond', 25, bold=True) #police d'écritur eainsi que taille de celle-ci.
         # noms des menus et commandes associées
-        items = (
-            ('NAINS', application.quitter),#texte du premier bouton jouer
-            ('DEMONS', application.quitter),#texte du deuxième bouton, quitter
-            ('CENTAURES', application.quitter),#texte du deuxième bouton, quitter
-            ('ORCS', application.quitter)#texte du deuxième bouton, quitter
+        items = (                               #boutons de sélection de faction
+            ('NAINS', application.start, player_faction=NAINS),
+            ('DEMONS', application.start, player_faction=DEMONS),
+            ('CENTAURES', application.start, player_faction=CENTAURES),
+            ('ORCS', application.start, player_faction=ORCS)
         )
         x = (largeur_fenetre/2) -330  #position première fenêtre, la deuxième est juste décalé de 120 en y vers le bas.
         y = (hauteur_fenetre/2)
@@ -249,20 +264,7 @@ class Application :
         self._initialiser()
         self.ecran = Btn_classe(self, self.groupeGlobal)
 
-    def startN(self):
-        nation="nain"
-        jeu(nation)
-
-    def startD(self):
-        nation="demon"
-        jeu(nation)
-
-    def startC(self):
-        nation="centaure"
-        jeu(nation)
-
-    def startO(self):
-        nation="orc"
+    def start(self):
         jeu(nation)
 
     def quitter(self) : #fonction qui finit le programme
@@ -282,26 +284,20 @@ class Application :
         self.groupeGlobal.draw(self.fenetre)
         pygame.display.update()
 
-
-
+faction_list=['nains','demons','orcs','centaures']
+faction_order=[]
+for i in range len(faction_list):
+    j=random.randint(0,len(faction_list)
+    faction_order.append(faction_list[j])
+    faction_list.remove(faction_list[j])
 
 def interface (): #faire une interface
   totot=totot
 
-def jeu(nation):
-    faction_list=[1,2,3,4]
-    player_faction=Dwarf
-    while len(faction_list)>1:
-        faction_list[0]=nation
-        faction_list[1]=
-        faction_list[2]=
-        faction_list[3]=
-  
-
-def player_order(): #fonction qui permet de savoir qui qui joue
-  faction_list=[1,2,3,4]
-  player_faction=dwarf
-
+dawi=Nation()
+defnar=Nation()
+diable=Nation()
+andrinos=Nation()
 NAINS=Dwarf(dawi, 3, 0, embleme_nain)
 ORCS=Orc(defnar, 0, 0, embleme_orc)
 DEMONS=Demon(diable, 0, 0, embleme_demon)
