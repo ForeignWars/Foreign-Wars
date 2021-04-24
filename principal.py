@@ -10,8 +10,8 @@ pygame.init()
 
 #---------ecran---------
 #définition de la taille de l'écran
-largeur_fenetre=1366
-hauteur_fenetre=768
+largeur_fenetre=1365
+hauteur_fenetre=657
 #définition des polices affichées à l'écran
 font_style=pygame.font.SysFont("Garamond",25)
 #création de l'écran
@@ -23,26 +23,26 @@ clock=pygame.time.Clock()
 tour=0  #initialisation du nombre de tour
 
 limitrophe = {
-  'thukten':{'lildeilon','inno-6','aorizia'},
-  'lildeilon':{'thukten','inno-6','ordogas','amlivor'},
-  'inno-6':{'thukten','lildeilon','aorizia','amlivor','azaire'},
-  'aorizia':{'thukten','inno-6','azaire'},
-  'ordogas':{'lildeilon','amlivor','baerdan','krar-zimak'},
-  'amlivor':{'lildeilon','inno-6','ordogas','azaire','baerdan','frodrine'},
-  'azaire':{'inno-6','aorizia','amlivor','frodrine'},
-  'baerdan':{'ordogas','amlivor','krar-zimak','frodrine'},
-  'krar-zimak':{'ordogas','baerdan','frodrine','vaedran','andrinos'},
-  'frodrine':{'amlivor','azaire','baerdan','krar-zimak','vaedran'},
-  'vaedran':{'krar-zimak','frodrine','andrinos','phosthonia'},
-  'andrinos':{'krar-zimak','vaedran','szet-as'},
-  'szet-as':{'andrinos','mentu-hotep'},
-  'mentu-hotep':{'eichornia','ryutada','kuargen','gargle','zhoshusat'},
-  'eichornia':{'mentu-hotep','ryutada','loukinir','zhoshusat','alaneo'},
-  'ryutada':{'mentu-hotep','eichornia','loukinir','kuargen'},
-  'kuargen':{'mentu-hotep','ryutada','gargle','thunodel'},
-  'gargle':{'mentu-hotep','kuargen','thunodel','zhoshusat','alaneo'},
+  'thukten':{'lildeilon','inno6','aorizia'},
+  'lildeilon':{'thukten','inno6','ordogas','amlivor'},
+  'inno6':{'thukten','lildeilon','aorizia','amlivor','azaire'},
+  'aorizia':{'thukten','inno6','azaire'},
+  'ordogas':{'lildeilon','amlivor','baerdan','krarzimak'},
+  'amlivor':{'lildeilon','inno6','ordogas','azaire','baerdan','frodrine'},
+  'azaire':{'inno6','aorizia','amlivor','frodrine'},
+  'baerdan':{'ordogas','amlivor','krarzimak','frodrine'},
+  'krarzimak':{'ordogas','baerdan','frodrine','vaedran','andrinos'},
+  'frodrine':{'amlivor','azaire','baerdan','krarzimak','vaedran'},
+  'vaedran':{'krarzimak','frodrine','andrinos','phosthonia'},
+  'andrinos':{'krarzimak','vaedran','szetas'},
+  'szetas':{'andrinos','mentuhotep'},
+  'mentuhotep':{'szetas','eichornia','ryutada','kuargen','gargle','zhoshusat'},
+  'eichornia':{'mentuhotep','ryutada','loukinir','zhoshusat','alaneo'},
+  'ryutada':{'mentuhotep','eichornia','loukinir','kuargen'},
+  'kuargen':{'mentuhotep','ryutada','gargle','thunodel'},
+  'gargle':{'mentuhotep','kuargen','thunodel','zhoshusat','alaneo'},
   'alaneo':{'eichornia','loukinir','thunodel','gargle','zhoshusat'},
-  'zhoshusat':{'mentu-hotep','eichornia','alaneo','gargle'},
+  'zhoshusat':{'mentuhotep','eichornia','alaneo','gargle'},
   'loukinir':{'eichornia','ryutada','alaneo','thunodel','doldrec'},
   'thunodel':{'kuargen','gargle','alaneo','loukinir','doldrec'},
   'doldrec':{'loukinir','thunodel'},
@@ -62,17 +62,17 @@ limitrophe = {
   'drulguk':{'qeralukia','vaelinore','karithyr'},
   'nordland':{'diable','finnär','vestgeir','dawi'},
   'dawi':{'nordland','scalare','helek'},
-  'scalare':{'dawi','helek','al-rion','sslitherin'},
-  'helek':{'dawi','scalare','al-rion','hua'},
-  'al-rion':{'scalare','helek','sslitherin'},
-  'sslitherin':{'scalare','al-rion','shyzzia'},
+  'scalare':{'dawi','helek','alrion','sslitherin'},
+  'helek':{'dawi','scalare','alrion','hua'},
+  'alrion':{'scalare','helek','sslitherin'},
+  'sslitherin':{'scalare','alrion','shyzzia'},
   'shyzzia':{'sslitherin','murem'},
   'finnär':{'nordland','vestgeir','defnar'},
-  'vestgeir':{'nordland','finnär','defnar','hol-drer'},
-  'defnar':{'finnär','vestgeir','hol-drer','ergli','dhondru'},
-  'hol-drer':{'vestgeir','defnar','dhondru'},
+  'vestgeir':{'nordland','finnär','defnar','holdrer'},
+  'defnar':{'finnär','vestgeir','holdrer','ergli','dhondru'},
+  'holdrer':{'vestgeir','defnar','dhondru'},
   'ergli':{'defnar','dhondru'},
-  'dhondru':{'defnar','hol-drer','ergli','rimmassee'},
+  'dhondru':{'defnar','holdrer','ergli','rimmassee'},
   'rimmassee':{'dhondru','hua'},
   'hua':{'helek','rimmassee','idenia'},
   'idenia':{'hua','baganda','brillup'},
@@ -265,7 +265,7 @@ class Application :
         self.ecran = Btn_classe(self, self.groupeGlobal)
 
     def start(self):
-        jeu(nation)
+        game(nation)
 
     def quitter(self) : #fonction qui finit le programme
         self.statut = False #kill le programme
@@ -284,20 +284,33 @@ class Application :
         self.groupeGlobal.draw(self.fenetre)
         pygame.display.update()
 
-faction_list=['nains','demons','orcs','centaures']
-faction_order=[]
-for i in range len(faction_list):
+def game ():
+  faction_list=['nains','demons','orcs','centaures']
+  faction_order=[]
+  for i in range len(faction_list):
     j=random.randint(0,len(faction_list)
     faction_order.append(faction_list[j])
     faction_list.remove(faction_list[j])
-
-def interface (): #faire une interface
-  totot=totot
-
-dawi=Nation()
-defnar=Nation()
-diable=Nation()
-andrinos=Nation()
+                     
+#définition des nations
+dawi=Nation((255,0,0), 10, limitrophe, 962, 421)
+defnar=Nation((144,59,59), 5, limitrophe, 1258, 548)
+diable=Nation((255,128,128),2, limitrophe, 676, 320)
+andrinos=Nation((0,100,0), 3, limitrophe, 218, 317)
+thukten=Nation((255,184,184), 7, limitrophe, 235, 612)
+lildeilon=Nation((0,255,0), 8, limitrophe, 188, 560)
+inno6=Nation((255,255,111), 5, limitrophe, 283, 569)
+aorizia=Nation((255,193,71), 3, limitrophe, 385, 550)
+ordogas=Nation((0,0,100), 6, limitrophe, 153, 494)
+amlivor=Nation((255,255,0), 9, limitrophe, 223, 504)
+azaire=Nation((0,0,255), 4, limitrophe, 310, 527)
+baerdan=Nation((100,255,100), 9, limitrophe, 211, 453)
+frodrine=Nation((0,151,0), 5, limitrophe, 288, 450)
+krarzimak=Nation((103,32,0), 4, limitrophe, 202, 395)
+vaedran=Nation((0,255,255), 3, limitrophe, 318, 395)
+szetas=Nation((171,50,255), 6, limitrophe, 244, 268)
+                     
+#définition des factions
 NAINS=Dwarf(dawi, 3, 0, embleme_nain)
 ORCS=Orc(defnar, 0, 0, embleme_orc)
 DEMONS=Demon(diable, 0, 0, embleme_demon)
@@ -306,7 +319,7 @@ CENTAURES=Centaur(andrinos, 4, 0, embleme_centaure)
 def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
   totot=totot
 
-def tour_machine (): #fonction qui fait jouer la machine
+def computer_turn (): #fonction qui fait jouer la machine
   totot=totot
 
 app = Application() #appelle la fonction Application
