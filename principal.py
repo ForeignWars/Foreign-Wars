@@ -309,7 +309,16 @@ frodrine=Nation((0,151,0), 5, limitrophe, 288, 450)
 krarzimak=Nation((103,32,0), 4, limitrophe, 202, 395)
 vaedran=Nation((0,255,255), 3, limitrophe, 318, 395)
 szetas=Nation((171,50,255), 6, limitrophe, 244, 268)
-                     
+mentuhotep=Nation((0,150,150), 8, limitrophe, 205, 189)
+kuargen=Nation((100,255,255), 3, limitrophe, 205, 107)
+ryutada=Nation((50,150,150), 6, limitrophe, 175, 160)
+loukinir=Nation((150,0,135), 5, limitrophe, 141, 138)
+doldrec=Nation((100,0,90), 8, limitrophe, 146, 110)
+thunodel=Nation((200,200,200), 7, limitrophe, 130, 95)
+eichornia=Nation((100,100,155), 6, limitrophe, 103, 151)
+alaneo=Nation((50,50,150), 8, limitrophe, 95, 95)
+gargle=Nation((59,0,100), 4, limitrophe, 154, 80)
+
 #définition des factions
 NAINS=Dwarf(dawi, 3, 0, embleme_nain)
 ORCS=Orc(defnar, 0, 0, embleme_orc)
