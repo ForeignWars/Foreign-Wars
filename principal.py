@@ -195,10 +195,10 @@ class Btn_classe :
         font = pygame.font.SysFont('Garamond', 25, bold=True) #police d'écritur eainsi que taille de celle-ci.
         # noms des menus et commandes associées
         items = (                               #boutons de sélection de faction
-            ('NAINS', application.start, player_faction=NAINS),
-            ('DEMONS', application.start, player_faction=DEMONS),
-            ('CENTAURES', application.start, player_faction=CENTAURES),
-            ('ORCS', application.start, player_faction=ORCS)
+            ('NAINS', application.startn),
+            ('DEMONS', application.startd),
+            ('CENTAURES', application.startc),
+            ('ORCS', application.starto)
         )
         x = (largeur_fenetre/2) -330  #position première fenêtre, la deuxième est juste décalé de 120 en y vers le bas.
         y = (hauteur_fenetre/2)
@@ -264,9 +264,30 @@ class Application :
         self._initialiser()
         self.ecran = Btn_classe(self, self.groupeGlobal)
 
-    def start(self):
-        game(nation)
+    def startn(self):
+      player_faction=NAINS
+      faction_order.append(faction_list[0])
+      faction_list.remove(faction_list[0])
+        game()
+    
+    def startd(self):
+      player_faction=DEMONS
+      faction_order.append(faction_list[1])
+      faction_list.remove(faction_list[1])
+        game()
 
+    def starto(self):
+      player_faction=ORCS
+      faction_order.append(faction_list[2])
+      faction_list.remove(faction_list[2])
+        game()
+        
+    def startc(self):
+      player_faction=CENTAURES
+      faction_order.append(faction_list[3])
+      faction_list.remove(faction_list[3])
+        game()
+        
     def quitter(self) : #fonction qui finit le programme
         self.statut = False #kill le programme
 
@@ -283,10 +304,11 @@ class Application :
         self.groupeGlobal.update()
         self.groupeGlobal.draw(self.fenetre)
         pygame.display.update()
-
-def game ():
-  faction_list=['nains','demons','orcs','centaures']
-  faction_order=[]
+                           
+faction_list=['nains','demons','orcs','centaures']
+faction_order=[]
+                           
+def game (): 
   for i in range len(faction_list):
     j=random.randint(0,len(faction_list)
     faction_order.append(faction_list[j])
