@@ -3,7 +3,7 @@ from nation import *
 
 class Faction:
   def __init__ (self, gold, army):
-    self.gold=gold
+    self.gold=5
     self.units=[]
     self.attack_units=[]
     self.army=army
