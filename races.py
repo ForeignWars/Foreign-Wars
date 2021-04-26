@@ -5,7 +5,6 @@ from nation import Nation
 class Dwarf (Faction):
   def __init__(self, start, mithril, gyrocopter, dwarf_emblem):
     Faction.__init__(self, gold, army)
-    self.army=0
     self.start=(start.x, start.y)
     self.mithril=mithril
     self.gyrocopter=gyrocopter
@@ -21,8 +20,6 @@ class Dwarf (Faction):
 class Orc (Faction):
   def __init__(self, start, rage, berzerker, orc_emblem):
     Faction.__init__(self, gold, army)
-    self.gold=5
-    self.army=0
     self.start=(start.x, start.y)
     self.rage=rage
     self.berzerker=berzerker
@@ -39,8 +36,6 @@ class Orc (Faction):
 class Demon (Faction):
   def __init__(self, start, souls, mephistopheles, demon_emblem):
     Faction.__init__(self, gold, army)
-    self.gold=5
-    self.army=0
     self.start=(start.x, start.y)
     self.souls=souls
     self.mephistopheles=mephistopheles
@@ -58,8 +53,6 @@ class Demon (Faction):
 class Centaure (Faction):
   def __init__(self, start, totems, centaurion, centaur_emblem):
     Faction.__init__(self, gold, army)
-    self.gold=5
-    self.army=0
     self.start=(start.x, start.y)
     self.totems=totems
     self.centaurion=centaurion
