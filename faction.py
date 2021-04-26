@@ -6,7 +6,7 @@ class Faction:
     self.gold=5
     self.units=[]
     self.attack_units=[]
-    self.army=army
+    self.army=0
     self.attack_army=self.army-1
   def attack (self, Nation):
     self.attack_units.append(self.units)
