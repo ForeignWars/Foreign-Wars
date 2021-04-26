@@ -5,7 +5,6 @@ from nation import Nation
 class Dwarf (Faction):
   def __init__(self, start, mithril, gyrocopter, dwarf_emblem):
     Faction.__init__(self, gold, army)
-    self.gold=5
     self.army=0
     self.start=(start.x, start.y)
     self.mithril=mithril
