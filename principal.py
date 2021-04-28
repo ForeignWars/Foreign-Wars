@@ -3,8 +3,8 @@ import os
 import random
 import time
 from pygame.locals import *
-from nation import Nation
-from faction import Faction
+from nation import *
+from faction import *
 from races import *
 pygame.init()
 
@@ -103,7 +103,7 @@ img_cav_orc = pygame.image.load("SPRITES/Orcs/Cav_Orc.png")
 img_art_orc = pygame.image.load("SPRITES/Orcs/Art_Orc.png")
 img_spec_orc = pygame.image.load("SPRITES/Orcs/Spec_Orc.png")
 img_fondmachine = pygame.image.load("Fond machine.png")
-img_map = pygame.image.load("Background.png")
+img_map = pygame.image.load("Uluai.png")
 
 class Menu:
     """création et gestions des boutons du menu"""
@@ -271,7 +271,7 @@ class Application :
       faction_order.append(faction_list[0])
       faction_list.remove(faction_list[0])
       game()
-    
+
     def startd(self):
       player_faction=DEMONS
       faction_order.append(faction_list[1])
@@ -283,13 +283,13 @@ class Application :
       faction_order.append(faction_list[2])
       faction_list.remove(faction_list[2])
       game()
-        
+
     def startc(self):
       player_faction=CENTAURES
       faction_order.append(faction_list[3])
       faction_list.remove(faction_list[3])
       game()
-        
+
     def quitter(self) : #fonction qui finit le programme
         self.statut = False #kill le programme
 
@@ -306,16 +306,16 @@ class Application :
         self.groupeGlobal.update()
         self.groupeGlobal.draw(self.fenetre)
         pygame.display.update()
-                           
+
 faction_list=['nains','demons','orcs','centaures']
 faction_order=[]
-                           
-def game (): 
+
+def game ():
   for i in range (len(faction_list)):
     j=random.randint(0,len(faction_list))
     faction_order.append(faction_list[j])
     faction_list.remove(faction_list[j])
-                     
+
 #définition des nations
 dawi=Nation((255,0,0), 10, limitrophe, 962, 421)
 defnar=Nation((144,59,59), 5, limitrophe, 1258, 548)
@@ -347,10 +347,7 @@ gargle=Nation((59,0,100), 4, limitrophe, 154, 80)
 NAINS=Dwarf(dawi, 3, 0, embleme_nain)
 ORCS=Orc(defnar, 0, 0, embleme_orc)
 DEMONS=Demon(diable, 0, 0, embleme_demon)
-CENTAURES=Centaur(andrinos, 4, 0, embleme_centaure)
-
-def condition_attaque (): #fonction qui permet de savoir si le joueur peut attaquer une région
-  totot=totot
+CENTAURES=Centaure(andrinos, 4, 0, embleme_centaure)
 
 def computer_turn (): #fonction qui fait jouer la machine
   totot=totot
