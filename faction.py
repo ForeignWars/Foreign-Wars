@@ -1,8 +1,8 @@
 import pygame
 from nation import *
 
-class Faction:
-  def __init__ (self, gold, army):
+class Faction :
+  def __init__(self,gold,army):
     self.gold=5
     self.units=[]
     self.attack_units=[]
