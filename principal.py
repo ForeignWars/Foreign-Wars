@@ -267,28 +267,36 @@ class Application :
         self.ecran = Btn_classe(self, self.groupeGlobal)
 
     def startn(self):
-      player_faction=NAINS
-      faction_order.append(faction_list[0])
-      faction_list.remove(faction_list[0])
-      game()
+        global faction_list
+        global faction_order
+        player_faction=NAINS
+        faction_order.append(faction_list[0])
+        faction_list.remove(faction_list[0])
+        game()
 
     def startd(self):
-      player_faction=DEMONS
-      faction_order.append(faction_list[1])
-      faction_list.remove(faction_list[1])
-      game()
+        global faction_list
+        global faction_order
+        player_faction=DEMONS
+        faction_order.append(faction_list[1])
+        faction_list.remove(faction_list[1])
+        game()
 
     def starto(self):
-      player_faction=ORCS
-      faction_order.append(faction_list[2])
-      faction_list.remove(faction_list[2])
-      game()
+        global faction_list
+        global faction_order
+        player_faction=ORCS
+        faction_order.append(faction_list[2])
+        faction_list.remove(faction_list[2])
+        game()
 
     def startc(self):
-      player_faction=CENTAURES
-      faction_order.append(faction_list[3])
-      faction_list.remove(faction_list[3])
-      game()
+        global faction_list
+        global faction_order
+        player_faction=CENTAURES
+        faction_order.append(faction_list[3])
+        faction_list.remove(faction_list[3])
+        game()
 
     def quitter(self) : #fonction qui finit le programme
         self.statut = False #kill le programme
@@ -311,10 +319,11 @@ faction_list=['nains','demons','orcs','centaures']
 faction_order=[]
 
 def game ():
-  for i in range (len(faction_list)):
-    j=random.randint(0,len(faction_list)-1)
-    faction_order.append(faction_list[j])
-    faction_list.remove(faction_list[j])
+    fenetre.blit(img_map,(0,0))
+    for i in range (len(faction_list)-1):
+        j=random.randint(0,len(faction_list)-1)
+        faction_order.append(faction_list[j])
+        faction_list.remove(faction_list[j]))
 
 #définition des nations
 dawi=Nation((255,0,0), 10, limitrophe, 962, 421)
