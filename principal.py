@@ -312,7 +312,7 @@ faction_order=[]
 
 def game ():
   for i in range (len(faction_list)):
-    j=random.randint(0,len(faction_list))
+    j=random.randint(0,len(faction_list)-1)
     faction_order.append(faction_list[j])
     faction_list.remove(faction_list[j])
 
@@ -342,6 +342,18 @@ thunodel=Nation((200,200,200), 7, limitrophe, 130, 95)
 eichornia=Nation((100,100,155), 6, limitrophe, 103, 151)
 alaneo=Nation((50,50,150), 8, limitrophe, 95, 95)
 gargle=Nation((59,0,100), 4, limitrophe, 154, 80)
+zhoshusat=Nation((50,255,255), 6, limitrophe, 76, 63)
+phostonia=Nation((0,0,150), 7, limitrophe, 387, 206)
+vyndono=Nation((0,70,70), 8, limitrophe, 419, 212)
+kharrak=Nation((255,255,79), 7, limitrophe, 442, 95)
+lycurgus=Nation((135,112,68), 4, limitrophe, 456, 142)
+jaldumka=Nation((255,163,122), 7, limitrophe, 533, 102)
+raseldor=Nation((100,100,100), 5, limitrophe, 570, 494)
+kayal=Nation((150,150,150), 6, limitrophe, 633, 482)
+tchorroppoi=Nation((70,70,70), 4, limitrophe, 608, 511)
+qeralukia=Nation((255,50,230), 3, limitrophe, 680, 506)
+bamzar=Nation((255,163,122), 7, limitrophe, 533, 168)
+vaelinore=Nation((255,100,230), 4 , limitrophe, 644, 540)
 
 #définition des factions
 NAINS=Dwarf(dawi, 3, 0, embleme_nain)
