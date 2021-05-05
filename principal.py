@@ -323,7 +323,7 @@ def game ():
     for i in range (len(faction_list)-1):
         j=random.randint(0,len(faction_list)-1)
         faction_order.append(faction_list[j])
-        faction_list.remove(faction_list[j]))
+        faction_list.remove(faction_list[j])
 
 #définition des nations
 dawi=Nation((255,0,0), 10, limitrophe, 962, 421)
