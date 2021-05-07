@@ -13,6 +13,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 pygame.init()
+#-------SONS-------
+VOLUME = pygame.mixer.music.set_volume(0.5)
+background=pygame.mixer.music.load("SONS/musique.ogg")
+pygame.mixer.music.play(15,0.0)
 
 #---------ecran---------
 #définition de la taille de l'écran
