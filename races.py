@@ -16,6 +16,11 @@ class Dwarf (Faction):
     def fortress(Nation):
         if mithril>=30:
             Nation.health+=10
+    def recruit_gyrocopter(self, Nation):
+        if mithril>=10:
+            Nation.army+=4
+        else:
+            print("Va miner, d'où tu viens me demander un gyrocoptère sans mithril?!")
 
 class Orc (Faction):
     def __init__(self, start, rage, berzerker, orc_emblem):
@@ -31,7 +36,11 @@ class Orc (Faction):
     def waaagh ():
         if rage>=50:
             self.army=self.army*2
-            self.units+=self.units
+    def recruit_berzerker(self, Nation):
+        if rage>=10:
+            Nation.army+=4
+        else:
+            print("Azy, kestuveux?! Tu vois pas ch'uis pas assez vénèr pour passer berzerk?")
 
 class Demon (Faction):
     def __init__(self, start, souls, mephistopheles, demon_emblem):
@@ -48,7 +57,11 @@ class Demon (Faction):
         if souls>=80:
             self.nations.append(Nation)
             Nation.conquered
-            Nation.units.clear()
+    def recruit_mephistopheles(self, Nation):
+        if souls>=25:
+            Nation.army+=4
+        else:
+            print("Tu veux invoquer notre Seigneur tout puissant sans sacrifice d'âmes? Va t'en, chien!")
 
 class Centaure (Faction):
     def __init__(self, start, totems, centaurion, centaur_emblem):
@@ -64,3 +77,8 @@ class Centaure (Faction):
     def volley(Nation):
         if totems>=16:
             Nation.health-=5
+    def recruit_centaurion(self, Nation):
+        if totem>=5:
+            Nation.army+=4
+        else:
+            print("Comment veux-tu former un centaurion sans faire appel à la puissance des ancêtres? Va sculpter des totems, et reviens me voir!")
