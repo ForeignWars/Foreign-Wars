@@ -2,10 +2,16 @@ import pygame
 import os
 import random
 import time
+
 from pygame.locals import *
 from nation import *
 from faction import *
 from races import *
+
+import PIL.Image
+import matplotlib.pyplot as plt
+import numpy as np
+
 pygame.init()
 
 #---------ecran---------
@@ -103,7 +109,7 @@ img_cav_orc = pygame.image.load("SPRITES/Orcs/Cav_Orc.png")
 img_art_orc = pygame.image.load("SPRITES/Orcs/Art_Orc.png")
 img_spec_orc = pygame.image.load("SPRITES/Orcs/Spec_Orc.png")
 img_fondmachine = pygame.image.load("Fond machine.png")
-img_map = pygame.image.load("Uluai.png")
+img_map = PIL.Image.open("Uluai.png")
 
 class Menu:
     """création et gestions des boutons du menu"""
