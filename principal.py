@@ -279,7 +279,7 @@ class Application :
         global faction_order
         player_faction=DEMONS
         faction_order.append(faction_list[1])
-        faction_list.remove(faction_list[1])
+        faction_list.remove(faction_list[0])
         game()
 
     def starto(self):
@@ -287,7 +287,7 @@ class Application :
         global faction_order
         player_faction=ORCS
         faction_order.append(faction_list[2])
-        faction_list.remove(faction_list[2])
+        faction_list.remove(faction_list[0])
         game()
 
     def startc(self):
@@ -295,7 +295,7 @@ class Application :
         global faction_order
         player_faction=CENTAURES
         faction_order.append(faction_list[3])
-        faction_list.remove(faction_list[3])
+        faction_list.remove(faction_list[0])
         game()
 
     def quitter(self) : #fonction qui finit le programme
@@ -318,8 +318,10 @@ class Application :
 faction_list=['nains','demons','orcs','centaures']
 faction_order=[]
 
-def game ():
-    fenetre.blit(img_map,(0,0))
+def game (faction_list,faction_order):
+    T = np.array(img_map)
+    plt.imshow(T)
+    plt.show()
     for i in range (len(faction_list)-1):
         j=random.randint(0,len(faction_list)-1)
         faction_order.append(faction_list[j])
