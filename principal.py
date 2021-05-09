@@ -17,10 +17,12 @@ pygame.init()
 VOLUME = pygame.mixer.music.set_volume(0.5)
 background=pygame.mixer.music.load("SONS/musique.ogg")
 pygame.mixer.music.play(15,0.0)
-CENTAURE=pygame.mixer.Sound("SONS/centaure.ogg")
-NAINS=pygame.mixer.Sound("SONS/nain.ogg")
-DEMONS=pygame.mixer.Sound("SONS/demon.ogg")
-ORCS=pygame.mixer.Sound("SONS/orc.ogg")
+
+Son_centaure=pygame.mixer.Sound("SONS/centaure.ogg")
+Son_nain=pygame.mixer.Sound("SONS/nain.ogg")
+Son_demon=pygame.mixer.Sound("SONS/demon.ogg")
+Son_orc=pygame.mixer.Sound("SONS/orc.ogg")
+
 #---------ecran---------
 #définition de la taille de l'écran
 largeur_fenetre=1365
@@ -280,7 +282,7 @@ class Application :
         self.ecran = Btn_classe(self, self.groupeGlobal)
 
     def startn(self):
-        NAINS.play()
+        Son_nain.play()
         global faction_list
         global faction_order
         player_faction=NAINS
@@ -289,7 +291,7 @@ class Application :
         game()
 
     def startd(self):
-        DEMONS.play()
+        Son_demon.play()
         global faction_list
         global faction_order
         player_faction=DEMONS
@@ -298,7 +300,7 @@ class Application :
         game()
 
     def starto(self):
-        ORCS.play()
+        Son_orc.play()
         global faction_list
         global faction_order
         player_faction=ORCS
@@ -307,7 +309,7 @@ class Application :
         game()
 
     def startc(self):
-        CENTAURE.play()
+        Son_centaure.play()
         global faction_list
         global faction_order
         player_faction=CENTAURES
