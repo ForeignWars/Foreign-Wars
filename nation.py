@@ -24,9 +24,9 @@ class Nation:
         leftover = self.attack_army - nation_ennemie.health
         self.attack_army-=nation_ennemie
         if nation_ennemie.army>leftover:
-          nation_ennemie.army-==leftover
+          nation_ennemie.army-=leftover
           leftover=0
-        elif nation_ennemie.army=leftover:
+        elif nation_ennemie.army==leftover:
           nation_ennemie = 0
           player_faction.append(nation_ennemie)
           nation_ennemie.army=1
